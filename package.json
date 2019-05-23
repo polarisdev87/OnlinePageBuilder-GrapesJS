@@ -1,0 +1,20 @@
+{
+  "name": "graphJS-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javascriptFan/graphJS-builder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javascriptFan/graphJS-builder/issues"
+  },
+  "homepage": "https://github.com/javascriptFan/graphJS-builder#readme"
+}
