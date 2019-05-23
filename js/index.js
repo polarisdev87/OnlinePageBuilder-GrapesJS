@@ -124,6 +124,10 @@ function getCommunityTemplate1() {
     return [{
         id: "community_template1",
         label: "Community Section",
+        attributes: {
+            class: 'custom-icon flowz-callToAction-style-2',
+            title: 'Community Section',
+        },
         category: "Template",
         content: `<div class="container">
                     <div class="row mx-0 bg-orange community-cn-block justify-content-between">

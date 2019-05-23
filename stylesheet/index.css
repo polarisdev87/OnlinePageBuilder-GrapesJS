@@ -740,3 +740,14 @@ a.grapes-js-image-anchor>.grapes-js-image-playbutton>span.glyphicon-play {
 #wrapper{
     width:100% !important;
 }
+
+.custom-icon {
+    padding:0 !important;
+    width:100px !important;
+    height:50px !important; 
+    min-height: auto !important
+}
+.flowz-callToAction-style-2{
+    background:url(../images/template1.png) no-repeat;
+    background-size:100% 100%
+}
