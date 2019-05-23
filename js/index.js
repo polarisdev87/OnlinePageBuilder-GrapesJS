@@ -56,6 +56,14 @@ function init() {
                 _token: "pCYrSwjuiV0t5NVtZpQDY41Gn5lNUwo3it1FIkAj"
             },
         },
+        
+        canvas: {
+            styles: [
+                "../stylesheet/bootstrap.min.css",
+                "../stylesheet/normalize.css",
+                "../stylesheet/style.css",
+            ]
+        },
 
         blockManager: {
             blocks: []
@@ -106,16 +114,48 @@ function init() {
 
 function getPCBoxBlock() {
     return [{
-        id: "cust-sliderbox",
-        label: "PC Box",
-        category: "Layout",
-        attributes: {
-            class: "gjs-block fa fa-slideshare",
-        },
-        content: {
-            type: "pcBox",
-            activeOnRender: 1
-        }
+        id: "community_template1",
+        label: "Community Section",
+        category: "Template",
+        content: `<div class="container">
+                    <div class="row mx-0 bg-orange community-cn-block justify-content-between">
+                        <div class="col-md-6 col-xl-5 community-cn order-2 order-md-1 wow fadeInUp">
+                            <h2 class="text-white">Community</h2>
+                            <p class="text-white">Greenfield, expansive and geo-strategic in its long-term vision, the special Economic Zone of Duqm on Oman's south easterncoast is quite unlike anything the</p>
+                            <p class="text-white font-16">Middle East has to offer. Overlooking the Arabian Sea and the Indian Ocean beyond, Duqm SEZ has an unparalleled advantage in positioning your business within strategic distance of some of the fastest growing markets in the</p>
+                            <a href="#" class="btn btn-white">Learn More</a>
+                        </div>
+                        <div class="col-md-6 col-xl-6 px-0 order-1 order-md-2 community-img has-animation has-blue animation-rtl" data-delay="2">
+                            <img class="d-block d-md-none w-100" src="./images/community.jpg">
+                        </div>
+                    </div>
+                    <div class="row community-list mx-0 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="col-6 col-md-3 community-list-cn bg-blue">
+                            <div class="community-box">
+                                <h3 class="font-medium mb-0">25</h3>
+                                <p class="text-light-slate-gray">Projects created</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 community-list-cn bg-blue">
+                            <div class="community-box">
+                                <h3 class="font-medium mb-0">782</h3>
+                                <p class="text-light-slate-gray">Sq.m. of lands</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 community-list-cn bg-blue">
+                            <div class="community-box">
+                                <h3 class="font-medium mb-0">1683</h3>
+                                <p class="text-light-slate-gray">Professionals staff</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 community-list-cn bg-blue">
+                            <div class="community-box">
+                                <h3 class="font-medium mb-0">451</h3>
+                                <p class="text-light-slate-gray">Dubai awards</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
     }];
 }
 
