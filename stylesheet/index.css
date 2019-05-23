@@ -1,0 +1,742 @@
+.feature-carousel {
+    height: 325px
+}
+
+.feature-carousel .feature-text {
+    height: 162px;
+    background-size: cover;
+    position: relative
+}
+
+.feature-carousel .feature-text .sector-image-overlay {
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .4
+}
+
+.feature-carousel .feature-text h2.top-heading {
+    color: #fff;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+    margin-bottom: 0
+}
+
+.feature-carousel .feature-text div.heading-separator {
+    border-top: solid 2px rgba(255, 255, 255, .5);
+    width: 134px;
+    height: 2px
+}
+
+.feature-carousel .feature-text h1.main-heading {
+    color: #fff;
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 15px
+}
+
+.feature-carousel .feature-text .intro-container p {
+    color: #fff;
+    font-size: 9px;
+    line-height: 12px;
+    margin-bottom: 20px
+}
+
+.feature-carousel .feature-text .link-container {
+    position: relative
+}
+
+.feature-carousel .feature-text .link-container a {
+    font-size: 9px;
+    line-height: 12px;
+    font-weight: 700;
+    color: #fff
+}
+
+.feature-carousel .feature-text .link-container a span {
+    float: left
+}
+
+.feature-carousel .feature-text .link-container a span.arrow {
+    background-image: url(../img/feature-carousel-arrow-white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 5px;
+    width: 8px;
+    height: 11px
+}
+
+.feature-carousel .feature-text .link-container a span:hover {
+    text-decoration: underline
+}
+
+.feature-carousel .feature-image {
+    height: 163px;
+    background-size: cover;
+    background-position: center
+}
+
+.feature-carousel ul.slick-dots {
+    bottom: 163px
+}
+
+.feature-carousel ul.slick-dots li {
+    width: 9px;
+    margin: 0 2px
+}
+
+.feature-carousel ul.slick-dots li button::before {
+    color: #fff;
+    font-size: 14px
+}
+
+.feature-carousel.slick-slider {
+    margin-bottom: 20px
+}
+
+.feature-carousel .home-slide .feature-text {
+    background-image: url("https://uat-team.systems.uk.hsbc/sites/HSBCUniTest/SiteAssets/Branding/slider-bg-home.png");
+}
+
+.feature-carousel .home-slide .feature-text .sector-image-overlay {
+    background-image: url("https://uat-team.systems.uk.hsbc/sites/HSBCUniTest/SiteAssets/Branding/SliderHome.png");
+    background-position: calc(100% + 88px) -23px;
+    background-size: 268px
+}
+
+.feature-carousel .br-slide .feature-text {
+    background-image: url("https://uat-team.systems.uk.hsbc/sites/HSBCUniTest/SiteAssets/Branding/slider-bg-site.png");
+}
+
+.feature-carousel .br-slide .feature-text .sector-image-overlay {
+    background-image: url("https://uat-team.systems.uk.hsbc/sites/HSBCUniTest/SiteAssets/Branding/SliderBusRole.png");
+    background-position: calc(100% + 41px) -41px;
+    background-size: 176px
+}
+
+.feature-carousel .ls-slide .feature-text {
+    background-image: url("https://uat-team.systems.uk.hsbc/sites/HSBCUniTest/SiteAssets/Branding/slider-bg-site.png");
+}
+
+.feature-carousel .ls-slide .feature-text .sector-image-overlay {
+    background-image: url("https://uat-team.systems.uk.hsbc/sites/HSBCUniTest/SiteAssets/Branding/SliderLead.png");
+    background-position: calc(100% + 41px) -41px;
+    background-size: 176px
+}
+
+.feature-carousel .rm-slide .feature-text {
+    background-image: url("https://uat-team.systems.uk.hsbc/sites/HSBCUniTest/SiteAssets/Branding/slider-bg-site.png");
+}
+
+.feature-carousel .rm-slide .feature-text .sector-image-overlay {
+    background-image: url("https://uat-team.systems.uk.hsbc/sites/HSBCUniTest/SiteAssets/Branding/SliderRiskMan.png");
+    background-position: calc(100% + 15px) -15px;
+    background-size: 135px
+}
+
+.feature-carousel .pc-slide .feature-text {
+    background-image: url("https://uat-team.systems.uk.hsbc/sites/HSBCUniTest/SiteAssets/Branding/slider-bg-site.png");
+}
+
+.feature-carousel .pc-slide .feature-text .sector-image-overlay {
+    background-image: url("https://uat-team.systems.uk.hsbc/sites/HSBCUniTest/SiteAssets/Branding/SliderPerfCulture.png");
+    background-position: calc(100% + 58px) -10px;
+    background-size: 176px
+}
+
+
+/*.feature-carousel #slide-01 .feature-image{background-image:url(https://team.global.hsbc/sites/HSBCUni/leadership/SiteAssets/images/Slide1.jpg)}
+.feature-carousel #slide-02 .feature-image{background-image:url(https://team.global.hsbc/sites/HSBCUni/leadership/SiteAssets/images/Slide1.jpg)}
+.feature-carousel #slide-03 .feature-image{background-image:url(https://team.global.hsbc/sites/HSBCUni/leadership/SiteAssets/images/Slide1.jpg)}
+.feature-carousel #slide-04 .feature-image{background-image:url(https://team.global.hsbc/sites/HSBCUni/leadership/SiteAssets/images/Slide1.jpg)}
+.feature-carousel #slide-05 .feature-image{background-image:url(https://team.global.hsbc/sites/HSBCUni/leadership/SiteAssets/images/Slide1.jpg)}
+*/
+
+.fh {
+    height: 100%;
+}
+
+.fw {
+    width: 100%;
+}
+
+@media only screen and (min-width:481px) {
+    .feature-carousel {
+        height: 650px
+    }
+    .feature-carousel .feature-text {
+        height: 325px
+    }
+    .feature-carousel .feature-text h2.top-heading {
+        font-size: 28px;
+        line-height: 36px
+    }
+    .feature-carousel .feature-text div.heading-separator {
+        width: 268px
+    }
+    .feature-carousel .feature-text h1.main-heading {
+        font-size: 38px;
+        line-height: 48px;
+        margin-bottom: 30px
+    }
+    .feature-carousel .feature-text .intro-container p {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 40px
+    }
+    .feature-carousel .feature-text .link-container a {
+        font-size: 18px;
+        line-height: 24px
+    }
+    .feature-carousel .feature-text .link-container a span.arrow {
+        margin-top: 1px;
+        margin-left: 10px;
+        width: 16px;
+        height: 22px;
+        background-size: 12px
+    }
+    .feature-carousel .feature-image {
+        height: 325px
+    }
+    .feature-carousel ul.slick-dots {
+        bottom: 333px
+    }
+    .feature-carousel ul.slick-dots li {
+        width: 18px;
+        margin: 0 4px
+    }
+    .feature-carousel ul.slick-dots li button::before {
+        font-size: 14px
+    }
+    .feature-carousel .home-slide .feature-text .sector-image-overlay {
+        background-position: calc(100% + 176px) -46px;
+        background-size: 536px
+    }
+    .feature-carousel .br-slide .feature-text .sector-image-overlay {
+        background-position: calc(100% + 82px) -82px;
+        background-size: 352px
+    }
+    .feature-carousel .ls-slide .feature-text .sector-image-overlay {
+        background-position: calc(100% + 82px) -82px;
+        background-size: 352px
+    }
+    .feature-carousel .rm-slide .feature-text .sector-image-overlay {
+        background-position: calc(100% + 30px) -30px;
+        background-size: 270px
+    }
+    .feature-carousel .pc-slide .feature-text .sector-image-overlay {
+        background-position: calc(100% + 116px) -20px;
+        background-size: 352px
+    }
+    .feature-carousel.slick-slider {
+        margin-bottom: 15px
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .feature-carousel ul.slick-dots {
+        bottom: 353px
+    }
+}
+
+@media only screen and (min-width:992px) {
+    .feature-carousel {
+        height: 300px
+    }
+    .feature-carousel .feature-text {
+        height: 300px
+    }
+    .feature-carousel .feature-text h2.top-heading {
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: 40px;
+        margin-bottom: 5px
+    }
+    .feature-carousel .feature-text div.heading-separator {
+        width: 85%
+    }
+    .feature-carousel .feature-text h1.main-heading {
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 20px
+    }
+    .feature-carousel .feature-text .intro-container p {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 20px
+    }
+    .feature-carousel .feature-text .link-container a {
+        font-size: 14px;
+        line-height: 18px
+    }
+    .feature-carousel .feature-text .link-container a span.arrow {
+        margin-top: 3px;
+        width: 8px;
+        height: 11px;
+        background-size: 8px
+    }
+    .feature-carousel .feature-text div a {
+        color: #FFFFFF;
+        font-weight: bold;
+        margin-top: 15px;
+        display: block;
+    }
+    .feature-carousel .feature-text div a:visited {
+        color: #FFFFFF;
+    }
+    .feature-carousel .feature-image {
+        height: 300px
+    }
+    .feature-carousel ul.slick-dots {
+        bottom: 10px;
+        text-align: left;
+        padding-left: 10px
+    }
+    .feature-carousel ul.slick-dots li {
+        width: 12px;
+        margin: 0 2px
+    }
+    .feature-carousel ul.slick-dots li button::before {
+        font-size: 40px !important
+    }
+    .feature-carousel .home-slide .feature-text .sector-image-overlay {
+        background-position: calc(100% + 155px) 43px;
+        background-size: 370px
+    }
+    .feature-carousel .br-slide .feature-text .sector-image-overlay {
+        background-position: calc(100% + 87px) 41px;
+        background-size: 220px
+    }
+    .feature-carousel .ls-slide .feature-text .sector-image-overlay {
+        background-position: calc(100% + 80px) 41px;
+        background-size: 205px
+    }
+    .feature-carousel .rm-slide .feature-text .sector-image-overlay {
+        background-position: calc(100% + 70px) 41px;
+        background-size: 205px
+    }
+    .feature-carousel .pc-slide .feature-text .sector-image-overlay {
+        background-position: calc(100% + 100px) 41px;
+        background-size: 275px
+    }
+}
+
+@media only screen and (min-width:1200px) {
+    .feature-carousel .feature-text h1.main-heading {
+        margin-bottom: 30px
+    }
+    .feature-carousel .feature-text .intro-container p {
+        margin-bottom: 40px
+    }
+}
+
+.slick-slide {
+    display: block !important;
+    background-color: gray;
+}
+
+
+/*END OF SLIDER CSS*/
+
+
+/* START OF CALLOUTS CSS*/
+
+.grapes-js-callout-text {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.grapes-js-callout-text-block {
+    padding-left: 5px;
+    background-color: white;
+    width: 100%;
+    height: 90px;
+}
+
+.grapes-js-callout-text-header {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.grapes-js-callout-text-description {
+    margin-top: 5px;
+    margin-top: 5px;
+    line-height: 1.5rem;
+    margin: 9px 0 0 0;
+    height: 80px;
+    overflow: hidden;
+}
+
+div[data-gjs-type="calloutBox"] {
+    width: 280px;
+}
+
+.grapes-js-callout-container {
+    flex: 1;
+    height: 267px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 10px;
+    position: relative;
+}
+
+.grapes-js-callout-container>a {
+    text-decoration: none;
+}
+
+.grapes-js-callout-container>a>img {
+    width: 100%;
+    height: 180px;
+}
+
+.grapes-js-callout-gradient-container {
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    height: 15px;
+    width: 100%;
+    top: 165px;
+    position: absolute;
+}
+
+:last-child.grapes-js-callout-container {
+    margin-right: 0px;
+}
+
+.grapes-js-callout-container-play {
+    position: absolute;
+    top: calc(50% - 80px);
+    left: calc(50% - 40px);
+    height: 80px;
+    width: 80px;
+    background-color: black;
+    border-radius: 50px;
+    opacity: 0.7;
+    visibility: hidden;
+}
+
+.grapes-js-callout-container-play>i {
+    color: white;
+    font-size: 25px;
+    /* top: 30px; */
+    /* left: 32px; */
+    position: absolute;
+    top: 28px;
+    left: 33px;
+}
+
+
+/*END OF CALLOUTS*/
+
+
+/* START OF what-is-new CSS*/
+
+.grapes-js-what-is-new-text {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.grapes-js-what-is-new-text-block {
+    padding-left: 5px;
+    background-color: white;
+    width: 100%;
+    height: 90px;
+}
+
+.grapes-js-what-is-new-text-header {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.grapes-js-what-is-new-text-description {
+    margin-top: 5px;
+    margin-top: 5px;
+    line-height: 1.5rem;
+    margin: 9px 0 0 0;
+    height: 80px;
+    overflow: hidden;
+}
+
+div[data-gjs-type="whatIsNewBox"] {
+    width: 280px;
+}
+
+.grapes-js-what-is-new-container {
+    flex: 1;
+    height: 267px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 10px;
+    position: relative;
+    min-width: 272px !important;
+    max-width: 272px;
+}
+
+.grapes-js-what-is-new-container>a {
+    text-decoration: none;
+}
+
+.grapes-js-what-is-new-container>a>img {
+    width: 100%;
+    height: 160px;
+}
+
+.grapes-js-what-is-new-gradient-container {
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    height: 15px;
+    width: 100%;
+    top: 165px;
+    position: absolute;
+}
+
+:last-child.grapes-js-what-is-new-container {
+    margin-right: 0px;
+}
+
+.grapes-js-what-is-new-container-play {
+    position: absolute;
+    top: calc(50% - 80px);
+    left: calc(50% - 40px);
+    height: 80px;
+    width: 80px;
+    background-color: black;
+    border-radius: 50px;
+    opacity: 0.7;
+    visibility: hidden;
+}
+
+.grapes-js-what-is-new-container-play>i {
+    color: white;
+    font-size: 25px;
+    /* top: 30px; */
+    /* left: 32px; */
+    position: absolute;
+    top: 28px;
+    left: 33px;
+}
+
+
+/*END OF what-is-new*/
+
+
+/*START OF PCBOC CSS*/
+
+.grapes-js-pcbox-playbutton {
+    position: absolute;
+    top: calc(50% - 35px);
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    border-radius: 100px;
+    left: calc(50% - 35px);
+    opacity: 0.7;
+    visibility: hidden;
+}
+
+.grapes-js-pcbox-playbutton>span.glyphicon-play {
+    font-size: 30px;
+    color: white;
+    top: 25px;
+    left: 25px;
+}
+
+
+/*END OF PCBOX CSS*/
+
+.show-play-button {
+    visibility: visible !important;
+}
+
+
+/*START OF IMAGE PLAY BUTTON*/
+
+a.grapes-js-image-anchor>.grapes-js-image-playbutton {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    border-radius: 60px;
+    background-color: black;
+    opacity: 0.7;
+    visibility: hidden;
+}
+
+a.grapes-js-image-anchor>.grapes-js-image {
+    width: 255px;
+    height: 200px
+}
+
+a.grapes-js-image-anchor {
+    position: relative;
+}
+
+a.grapes-js-image-anchor>.grapes-js-image-playbutton>span.glyphicon-play {
+    top: 22px;
+    left: 25px;
+}
+
+
+/*END OF IMAGE PLAY BUTTON*/
+
+
+/* SLIDER CSS STSRTS*/
+
+.grapes-js-slider-container {
+    width: 866px;
+    position: relative;
+    background-color:black;
+}
+
+.grapes-js-slider-container {
+    content: "";
+    /*background-image: url(https://uat-team.systems.uk.hsbc/sites/HSBCUniTest/SiteAssets/Branding/slider-bg-home.png);*/
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+.grapes-js-slider-text {
+    width: 41.66666667%;
+    float: left;
+    color: #FFF;
+}
+
+.grapes-js-slider-text-image {
+    content: "";
+    /*background-image: url(https://uat-team.systems.uk.hsbc/sites/HSBCUniTest/SiteAssets/Branding/SliderHome.png);*/
+    background-repeat: no-repeat;
+    height: 300px;
+    background-position-x: 145px;
+    background-position-y: 50px;
+    background-size: 370px;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.grapes-js-slider-image {
+    width: 58.33333333%;
+    float: left;
+    position: relative;
+}
+
+.grapes-js-slider-header {
+    padding-bottom: 5px;
+    font-size: 14px;
+    border-bottom: 1px solid white;
+    width: 100%;
+}
+
+.grapes-js-slider-title {
+    font-size: 34px;
+}
+
+.grapes-js-slider-link>a {
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+}
+
+.grapes-js-slider-text-description {
+    font-size: 12px;
+    PADDING-TOP: 10PX;
+}
+
+.grapes-js-slider-text-padding {
+    padding: 15px;
+}
+
+.grapes-js-slider-image>img {
+    width: 100%;
+    height: 300px;
+}
+
+.grapes-js-slider-play-container {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50px;
+    top: 100px;
+    left: calc(50% - 50px);
+    background: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+}
+
+.grapes-js-slider-play-button {
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    opacity: 1;
+    font-size: 40px;
+    color: white;
+}
+
+
+/*SLIDER CSS ENDS*/
+
+
+/*CUSTOM VIDEO CSS STARTS*/
+
+.grapes-js-image-container {
+    display: inline-block;
+    position: relative;
+}
+
+.grapes-js-image-container>img {
+    max-width: 100%;
+}
+
+.thumb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 25%;
+    width: 17%;
+    z-index: 1;
+    color: black;
+    font-size: 25px;
+    visibility: hidden;
+}
+
+.thumb>i {
+    font-size: 50px !important;
+}
+
+
+/*CUSTOM VIDEO CSS STARTS*/
+
+
+/*CUSTOM BUTTON CSS STARTS*/
+
+.grapes-js-button {
+    background: black;
+    padding: 5px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #414045 !important;
+    vertical-align: middle;
+    display: table-cell;
+    color: white !important;
+    min-width: 75px;
+}
+/*CUSTOM BUTTON CSS ENDS*/
+
+/*Grapes Js */
+
+.sliderBox, .calloutBox, .whatsNewBox{
+    z-index: 1000000;
+}
+
+#wrapper{
+    width:100% !important;
+}
