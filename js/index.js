@@ -51,17 +51,30 @@ function init() {
         },
 
         assetManager: {
-            upload: "https://test.page",
-            params: {
-                _token: "pCYrSwjuiV0t5NVtZpQDY41Gn5lNUwo3it1FIkAj"
-            },
+            assets: [
+                'http://placehold.it/350x250/78c5d6/fff/image1.jpg',
+                // Pass an object with your properties
+                {
+                    type: 'image',
+                    src: 'http://placehold.it/350x250/459ba8/fff/image2.jpg',
+                    height: 350,
+                    width: 250
+                },
+                {
+                    // As the 'image' is the base type of assets, omitting it will
+                    // be set as `image` by default
+                    src: 'http://placehold.it/350x250/79c267/fff/image3.jpg',
+                    height: 350,
+                    width: 250
+                },
+            ],
         },
-        
+
         canvas: {
             styles: [
-                "../stylesheet/bootstrap.min.css",
-                "../stylesheet/normalize.css",
-                "../stylesheet/style.css",
+                "stylesheet/bootstrap.min.css",
+                "stylesheet/normalize.css",
+                "stylesheet/style.css",
             ]
         },
 
@@ -103,16 +116,11 @@ function init() {
     }]);
 
     editor.render();
-    var comps = editor.DomComponents;
-    var defaultType = comps.getType('text');
-    var defaultModel = defaultType.model;
-    var defaultView = defaultType.view;
-    createPCBoxComp(editor, comps, defaultModel, defaultView);
-    addBlock(editor, getPCBoxBlock());
+    addBlock(editor, getCommunityTemplate1());
 
 }
 
-function getPCBoxBlock() {
+function getCommunityTemplate1() {
     return [{
         id: "community_template1",
         label: "Community Section",
@@ -125,9 +133,7 @@ function getPCBoxBlock() {
                             <p class="text-white font-16">Middle East has to offer. Overlooking the Arabian Sea and the Indian Ocean beyond, Duqm SEZ has an unparalleled advantage in positioning your business within strategic distance of some of the fastest growing markets in the</p>
                             <a href="#" class="btn btn-white">Learn More</a>
                         </div>
-                        <div class="col-md-6 col-xl-6 px-0 order-1 order-md-2 community-img has-animation has-blue animation-rtl" data-delay="2">
-                            <img class="d-block d-md-none w-100" src="./images/community.jpg">
-                        </div>
+                            <img class="col-md-6 col-xl-6 px-0 order-1 order-md-2 community-img has-animation has-blue animation-rtl d-block w-100" src="./images/community.jpg" data-gjs-editable="true" data-gjs-removable="false"/>
                     </div>
                     <div class="row community-list mx-0 wow fadeInUp" data-wow-delay=".2s">
                         <div class="col-6 col-md-3 community-list-cn bg-blue">
@@ -164,128 +170,5 @@ function addBlock(editor, blocks) {
         editor.BlockManager.add(item.id, item);
     });
 }
-
-function createPCBoxComp(editor, comps, defaultModel, defaultView) {
-
-    comps.addType('pcBox', {
-        // Define the Model
-        model: defaultModel.extend({
-            // Extend default properties
-            defaults: Object.assign({}, defaultModel.prototype.defaults, {
-                droppable: false,
-                draggable: true,
-                type: 'pcBox',
-                tagName: 'div',
-                void: 0,
-                title: '',
-                attributes: {
-                    frameborder: 0,
-                },
-                traits: [{
-                    type: 'text',
-                    label: 'Title',
-                    name: 'title',
-                    placeholder: 'eg. Lorem Ipsum',
-                    changeProp: 1
-                }]
-            }),
-            getAttrToHTML: function getAttrToHTML() {
-                for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-                    args[_key3] = arguments[_key3];
-                }
-
-                var attr = defaultModel.prototype.getAttrToHTML.apply(this, args);
-                attr["data-title"] = this.get('title');
-                return attr;
-            },
-            updateInitialValues: function updateInitialValues() {
-                this.set('title', this.attributes.attributes["data-title"])
-            },
-            init: function init() { },
-            initialize: function initialize(o) {
-                defaultModel.prototype.initialize.apply(this, arguments);
-                this.updateInitialValues();
-                this.listenTo(this, 'change:title', this.updateTitle);
-
-            },
-            updateAll: function updateAll() {
-                this.updateTitle();
-            },
-
-            updateTitle: function updateTitle() {
-                var linkModel = this.get("components").at(0);
-                if (linkModel && linkModel.get("components").length > 0) {
-                    var h4Model = linkModel.get("components").at(0);
-                    var title = this.get('title');
-                    h4Model.set("content", title);
-                }
-            }
-        }, {
-                isComponent: function isComponent(el) {
-                    if (el.getAttribute && el.getAttribute('data-gjs-type') == 'pcBox') {
-                        return {
-                            type: 'pcBox'
-                        };
-                    }
-                }
-            }),
-
-        // Define the View
-        view: defaultView.extend({
-
-            tagName: 'div',
-            events: {
-                'dblclick': 'openModal',
-                'click': 'openSettings'
-            },
-
-            openSettings: function openSettings(e) {
-
-                this.el.click();
-
-                var openBlocksBtn = editor.Panels.getButton('views', 'open-blocks');
-                openBlocksBtn && openBlocksBtn.set('active', 0);
-
-                var openTMBtn = editor.Panels.getButton('views', 'open-tm');
-                openTMBtn && openTMBtn.set('active', 1);
-            },
-            initialize: function initialize(o) {
-                defaultView.prototype.initialize.apply(this, arguments);
-                this.listenTo(this.model, 'change:title', this.updateTitle);
-
-            },
-
-            updateTitle: function updateTitle() {
-                $(this.el).find('h4').html(this.model.get("title"));
-            },
-
-            openModal: function openModal(e) {
-                var em = this.opts.config.em;
-                var editor = em ? em.get('Editor') : '';
-
-                if (editor) {
-                    editor.runCommand('open-assets', {
-                        target: this.model,
-                        onSelect: function onSelect() {
-                            editor.Modal.close();
-
-                            editor.AssetManager.setTarget(null);
-                        }
-                    });
-                }
-                this.el.click();
-            },
-            disableClick: function disableClick() {
-                this.preventDefault();
-            },
-            render: function render() {
-                this.updateAttributes();
-                this.el.innerHTML = "<div style=\"height:100px;background-color:red\"><h4>" + (this.model.get("title") ? this.model.get("title") : "TEST CONTENT") + "</h4></div>";
-                this.model.updateAll();
-                return this;
-            }
-        })
-    });
-};
 
 init();
