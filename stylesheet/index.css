@@ -751,3 +751,28 @@ a.grapes-js-image-anchor>.grapes-js-image-playbutton>span.glyphicon-play {
     background:url(../images/template1.png) no-repeat;
     background-size:100% 100%
 }
+
+.flowz-visitor-headerback-style-2 {
+    background: url(../images/visitor_header.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.flowz-visitor-guide-style-2 {
+    background: url(../images/visitor_guide.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.flowz-visitor-link-style-2 {
+    background: url(../images/visitor_links.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.flowz-visitor-news-style-2 {
+    background: url(../images/visitor_news.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.flowz-visitor-footer-style-2 {
+    background: url(../images/visitor_bottom.png) no-repeat;
+    background-size: 100% 100%; 
+}

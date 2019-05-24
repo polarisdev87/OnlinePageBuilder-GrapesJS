@@ -75,6 +75,8 @@ function init() {
                 "stylesheet/bootstrap.min.css",
                 "stylesheet/normalize.css",
                 "stylesheet/style.css",
+                'stylesheet/slick-theme.css',
+                'stylesheet/slick.css'
             ]
         },
 
@@ -117,7 +119,10 @@ function init() {
 
     editor.render();
     addBlock(editor, getCommunityTemplate1());
-
+    addBlock(editor, getVisitHeaderTemplate());
+    addBlock(editor, getVisitorGuide());
+    addBlock(editor, getVisitorLink());
+    addBlock(editor, getVisitorNews());
 }
 
 function getCommunityTemplate1() {
@@ -137,7 +142,7 @@ function getCommunityTemplate1() {
                             <p class="text-white font-16">Middle East has to offer. Overlooking the Arabian Sea and the Indian Ocean beyond, Duqm SEZ has an unparalleled advantage in positioning your business within strategic distance of some of the fastest growing markets in the</p>
                             <a href="#" class="btn btn-white">Learn More</a>
                         </div>
-                            <img class="col-md-6 col-xl-6 px-0 order-1 order-md-2 community-img has-animation has-blue animation-rtl d-block w-100" src="./images/community.jpg" data-gjs-editable="true" data-gjs-removable="false"/>
+                            <img class="col-md-6 col-xl-6 px-0 order-1 order-md-2 community-img has-animation has-blue animation-rtl d-block w-100 h-100" src="./images/community.jpg" data-gjs-editable="true" data-gjs-removable="false"/>
                     </div>
                     <div class="row community-list mx-0 wow fadeInUp" data-wow-delay=".2s">
                         <div class="col-6 col-md-3 community-list-cn bg-blue">
@@ -168,6 +173,576 @@ function getCommunityTemplate1() {
                 </div>`
     }];
 }
+
+function getVisitHeaderTemplate() {
+    return [{
+        id: "visitor_header",
+        label: '',
+        attributes: {
+            class: 'custom-icon flowz-visitor-headerback-style-2',
+            title: ''
+        },
+        category: 'Tabs',
+        content: `<div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h2 class="wow fadeInUp">What's On Duqm</h2>
+                            <p class="text-gray mb-3 mb-lg-4 wow fadeInUp" data-wow-delay=".2s">Lorem ipsum dolor amet consectetur adipiscing elitsa Pellentesque commodo <br class="d-none d-sm-block" /> tincidunt tempus Duis lacus lectus aliquet euismod porta amet massa.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">   
+                            <div class="square-tab wow fadeIn">
+                                <ul class="square-tab-list">
+                                    <li>
+                                        <a class="square-tab-box active" href="javascript:void(0)" data-id="motel">
+                                            <div class="icon motel"></div>
+                                            <span class="d-none d-sm-block">Hotels</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="square-tab-box" href="javascript:void(0)" data-id="things">
+                                            <div class="icon things"></div>
+                                            <span class="d-none d-sm-block">Things to do</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="square-tab-box" href="javascript:void(0)" data-id="restaurant">
+                                            <div class="icon restaurant"></div>
+                                            <span class="d-none d-sm-block">Restaurant</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="square-tab-box" href="javascript:void(0)" data-id="flights">
+                                            <div class="icon flights"></div>
+                                            <span class="d-none d-sm-block">Flights</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="square-tab-box" href="javascript:void(0)" data-id="cruises">
+                                            <div class="icon cruises"></div>
+                                            <span class="d-none d-sm-block">Cruises</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="square-tab-box" href="javascript:void(0)" data-id="roadTrip">
+                                            <div class="icon road-trip"></div>
+                                            <span class="d-none d-sm-block">Road Trips</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div id="motel" class="square-tab-content active">
+                                    <h5 class="d-block d-sm-none mt-3 mb-0 text-center">Hotels</h5>
+                                    <ul class="square-tab-content-list">
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit3.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    3Km
+                                                </div>
+                                                <h5 class="font-medium">Park Inn by Radisson</h5>
+                                                <p class="text-gray">We welcome our guests in a safe and secure hotel environment</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit1.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    1.2Km
+                                                </div>
+                                                <h5 class="font-medium">Crowne plaza Duqm</h5>
+                                                <p class="text-gray">Get the celebrity treatment with world-class service at Crowne Plaza Duqm</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit2.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    0.7Km
+                                                </div>
+                                                <h5 class="font-medium">City Hotel Duqm</h5>
+                                                <p class="text-gray">City Hotel Duqm is located between Salalah and Muscat.</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="things" class="square-tab-content">
+                                    <h5 class="d-block d-sm-none mt-3 mb-0 text-center">Things to do</h5>
+                                    <ul class="square-tab-content-list">
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit2.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    0.7Km
+                                                </div>
+                                                <h5 class="font-medium">City Hotel Duqm</h5>
+                                                <p class="text-gray">City Hotel Duqm is located between Salalah and Muscat.</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit3.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    3Km
+                                                </div>
+                                                <h5 class="font-medium">Park Inn by Radisson</h5>
+                                                <p class="text-gray">We welcome our guests in a safe and secure hotel environment</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit1.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    1.2Km
+                                                </div>
+                                                <h5 class="font-medium">Crowne plaza Duqm</h5>
+                                                <p class="text-gray">Get the celebrity treatment with world-class service at Crowne Plaza Duqm</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="restaurant" class="square-tab-content">
+                                    <h5 class="d-block d-sm-none mt-3 mb-0 text-center">Restaurant</h5>
+                                    <ul class="square-tab-content-list">
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit1.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    1.2Km
+                                                </div>
+                                                <h5 class="font-medium">Crowne plaza Duqm</h5>
+                                                <p class="text-gray">Get the celebrity treatment with world-class service at Crowne Plaza Duqm</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit2.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    0.7Km
+                                                </div>
+                                                <h5 class="font-medium">City Hotel Duqm</h5>
+                                                <p class="text-gray">City Hotel Duqm is located between Salalah and Muscat.</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit3.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    3Km
+                                                </div>
+                                                <h5 class="font-medium">Park Inn by Radisson</h5>
+                                                <p class="text-gray">We welcome our guests in a safe and secure hotel environment</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="flights" class="square-tab-content">
+                                    <h5 class="d-block d-sm-none mt-3 mb-0 text-center">Flights</h5>
+                                    <ul class="square-tab-content-list">
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit3.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    3Km
+                                                </div>
+                                                <h5 class="font-medium">Park Inn by Radisson</h5>
+                                                <p class="text-gray">We welcome our guests in a safe and secure hotel environment</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit1.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    1.2Km
+                                                </div>
+                                                <h5 class="font-medium">Crowne plaza Duqm</h5>
+                                                <p class="text-gray">Get the celebrity treatment with world-class service at Crowne Plaza Duqm</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit2.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    0.7Km
+                                                </div>
+                                                <h5 class="font-medium">City Hotel Duqm</h5>
+                                                <p class="text-gray">City Hotel Duqm is located between Salalah and Muscat.</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="cruises" class="square-tab-content">
+                                    <h5 class="d-block d-sm-none mt-3 mb-0 text-center">Cruises</h5>
+                                    <ul class="square-tab-content-list">
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit2.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    0.7Km
+                                                </div>
+                                                <h5 class="font-medium">City Hotel Duqm</h5>
+                                                <p class="text-gray">City Hotel Duqm is located between Salalah and Muscat.</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit3.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    3Km
+                                                </div>
+                                                <h5 class="font-medium">Park Inn by Radisson</h5>
+                                                <p class="text-gray">We welcome our guests in a safe and secure hotel environment</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit1.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    1.2Km
+                                                </div>
+                                                <h5 class="font-medium">Crowne plaza Duqm</h5>
+                                                <p class="text-gray">Get the celebrity treatment with world-class service at Crowne Plaza Duqm</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="roadTrip" class="square-tab-content">
+                                    <h5 class="d-block d-sm-none mt-3 mb-0 text-center">Road Trips</h5>
+                                    <ul class="square-tab-content-list">
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit1.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    1.2Km
+                                                </div>
+                                                <h5 class="font-medium">Crowne plaza Duqm</h5>
+                                                <p class="text-gray">Get the celebrity treatment with world-class service at Crowne Plaza Duqm</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit2.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    0.7Km
+                                                </div>
+                                                <h5 class="font-medium">City Hotel Duqm</h5>
+                                                <p class="text-gray">City Hotel Duqm is located between Salalah and Muscat.</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="square-tab-content-img">
+                                                <img src="./images/visit3.jpg">
+                                            </a>
+                                            <div class="square-tab-content-detail border-box border-light-gray border-1">
+                                                <div class="my-location d-flex align-items-center mb-3">
+                                                    <img src="./images/my-location.svg" class="mr-2" width="20">
+                                                    3Km
+                                                </div>
+                                                <h5 class="font-medium">Park Inn by Radisson</h5>
+                                                <p class="text-gray">We welcome our guests in a safe and secure hotel environment</p>
+                                                <a href="#" class="link">Find Out More</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
+    }];
+}
+
+function getVisitorGuide() {
+    return [{
+        id: "visitor_guide",
+        label: "",
+        attributes: {
+            class: "custom-icon flowz-visitor-guide-style-2",
+            title: ""
+        },
+        category: "Features Blocks",
+        content: `<section class="visitor-section">
+                    <div class="visitor-section-cn">
+                        <div class="row mx-0 px-sm-3 px-lg-5">
+                            <div class="col-12 text-center">
+                                <h2 class="text-white wow fadeInUp">Duqm Visitor Guide</h2>
+                                <p class="text-white wow fadeInUp mb-0 mb-lg-4" data-wow-delay=".2s">Duis porta finibus vehicula Fusce ultricies est vitae blandit venenatis Proisa <br class="d-none d-sm-block" /> lectus condimentum consequat justo pharetra nibh.</p>
+                            </div>
+                        </div>
+                        <div class="row mx-0 px-3 px-lg-5 visitor-guide-slider">
+                            <div class="col-12 mt-50 wow fadeInUp" data-wow-delay=".3s">
+                                <a href="#" class="visitor-box">
+                                    <div class="visitor-box-img">
+                                        <img src="./images/visit4.jpg">
+                                    </div>
+                                    <div class="visitor-box-detail">
+                                        <h5 class="font-medium">Duqm Travel Guide</h5>
+                                        <p class="text-gray">Follow our quick guide for all you need to know ahead of your Duqm holiday</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-12 mt-50 wow fadeInUp" data-wow-delay=".4s">
+                                <a href="#" class="visitor-box">
+                                    <div class="visitor-box-img">
+                                        <img src="./images/visit5.jpg">
+                                    </div>
+                                    <div class="visitor-box-detail">
+                                        <h5 class="font-medium">Duqm upcoming hotels</h5>
+                                        <p class="text-gray">Check out our guide of the latest hotels in Duqm and plan the perfect holiday today</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-12 mt-50 wow fadeInUp" data-wow-delay=".5s">
+                                <a href="#" class="visitor-box">
+                                    <div class="visitor-box-img">
+                                        <img src="./images/visit6.jpg">
+                                    </div>
+                                    <div class="visitor-box-detail">
+                                        <h5 class="font-medium">Top Duqm attractions</h5>
+                                        <p class="text-gray">Pellentesque habitant tristique senectus netus malesuada fames turpis egestas.</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-12 mt-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="#" class="visitor-box">
+                                    <div class="visitor-box-img">
+                                        <img src="./images/visit7.jpg">
+                                    </div>
+                                    <div class="visitor-box-detail">
+                                        <h5 class="font-medium">Duqm smart cities economy</h5>
+                                        <p class="text-gray">Nunc eget justo odio posuere aliquet Nullam accumsan eros purus suscipit mollis.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>`
+    }]
+}
+
+function getVisitorLink() {
+    return [{
+        id: 'vistor_link',
+        label: '',
+        attributes: {
+            class: 'custom-icon flowz-visitor-link-style-2',
+            title: ''
+        },
+        category: 'Features Blocks',
+        content: `<div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h2 class="wow fadeInUp">Quick Links</h2>
+                            <p class="text-gray mb-0 mb-lg-4 wow fadeInUp" data-wow-delay=".2s">Duis porta finibus vehicula Fusce ultricies est vitae blandit venenatis Proisa <br class="d-none d-sm-block" />lectus condimentum consequat justo pharetra nibh.</p>
+                        </div>
+                    </div>
+                    <div class="row quick-link-row mt-50 wow fadeInUp">
+                        <div class="col-12 col-xl-7">
+                            <a href="#" class="quick-link-detail">
+                                <div class="quick-link-img" style="background-image: url(/sezadV4/public/site/images/quick-link1.jpg);"></div>
+                                <div class="quick-link-tag">Visa requirements</div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-xl-5">
+                            <a href="#" class="quick-link-detail">
+                                <div class="quick-link-img" style="background-image: url(/sezadV4/public/site/images/quick-link2.jpg);"></div>
+                                <div class="quick-link-tag">How to reach</div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <a href="#" class="quick-link-detail">
+                                <div class="quick-link-img" style="background-image: url(/sezadV4/public/site/images/quick-link3.jpg);"></div>
+                                <div class="quick-link-tag">Fun For The Whole Family</div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <a href="#" class="quick-link-detail">
+                                <div class="quick-link-img" style="background-image: url(/sezadV4/public/site/images/quick-link4.jpg);"></div>
+                                <div class="quick-link-tag">Discover Adventure</div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="quick-link-detail weather-block">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="weather-title mb-0">Duqm, Oman</h5>
+                                        <p class="weather-date">Thursday, 10:00 am</p>
+                                    </div>
+                                    <div class="weather-switch">
+                                        <input type="checkbox" id="weatherSwitch">
+                                        <label for="weatherSwitch">Toggle</label>
+                                    </div>
+                                </div>
+                                <div class="weather-mode d-flex ">
+                                    <div class="mode mode-day active">
+                                        <div class="mode-title-block"> 
+                                            <p class="mode-title mb-3">Day</p>
+                                            <div class="d-flex align-items-center">
+                                                <img src="./images/sun.svg" class="mr-2 mr-sm-3" width="50">
+                                                <h2 class="mb-0 text-white">25°</h2>
+                                            </div>
+                                        </div>
+                                        <div class="mode-detail-block"> 
+                                            <span class="d-block">Precipitation: 5%</span>
+                                            <span class="d-block">Humidity: 70%</span>
+                                            <span class="d-block">Wind: 6 km/h</span>
+                                        </div>
+                                    </div>
+                                    <div class="mode mode-night d-flex">
+                                        <div class="v-separator"></div>
+                                        <div>
+                                            <div class="mode-title-block"> 
+                                                <p class="mode-title mb-3">Night</p>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="./images/moon.svg" class="mr-2 mr-sm-3" width="50">
+                                                    <h2 class="mb-0 text-white">19°</h2>
+                                                </div>
+                                            </div>
+                                            <div class="mode-detail-block"> 
+                                                <span class="d-block">Precipitation: 2%</span>
+                                                <span class="d-block">Humidity: 63%</span>
+                                                <span class="d-block">Wind: 14 km/h</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
+    }]
+}
+
+function getVisitorNews() {
+    return [{
+        id: 'vistor_news',
+        label: '',
+        attributes: {
+            class: 'custom-icon flowz-visitor-news-style-2',
+            title: ''
+        },
+        category: 'Latest Scroller',
+        content: `<section>
+                    <div class="bg-box bg-light-gray right wow fadeInRight"></div>
+                    <div class="container">
+                        <div class="row align-items-end">
+                            <div class="col-auto">
+                                <h2 class="mb-2 wow fadeInLeft" data-wow-delay=".2s">Latest News</h2>
+                                <h6 class="d-inline-block font-regular mb-0 wow fadeInLeft" data-wow-delay=".2s">Fusce ultrices tortor vitae tortor facilisis fringilla</h6>
+                            </div>
+                            <div class="col-auto ml-auto wow fadeInRight" data-wow-delay=".4s">
+                                <a href="#" class="link">View All</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="news-block">
+                                    <li class="wow fadeInUp" data-wow-delay=".5s">
+                                        <a href="#" class="news-img">
+                                            <img src="./images/news1.jpg">
+                                        </a>
+                                        <div class="news-box">
+                                            <p class="news-date">October 27, 2018</p>
+                                            <a href="#" class="news-title">A Japanese Economic  Delegation Explores Investment Opportunities in Duqm</a>
+                                            <a href="#" class="link">Read More</a>
+                                        </div>
+                                    </li>
+                                    <li class="wow fadeInUp" data-wow-delay=".7s">
+                                        <a href="#" class="news-img">
+                                            <img src="./images/news2.jpg">
+                                        </a>
+                                        <div class="news-box">
+                                            <p class="news-date">October 25, 2018</p>
+                                            <a href="#" class="news-title">Development Of Strategy To Promote Fish Industries In Duqm</a>
+                                            <a href="#" class="link">Read More</a>
+                                        </div>
+                                    </li>
+                                    <li class="wow fadeInUp" data-wow-delay=".9s">
+                                        <a href="#" class="news-img">
+                                            <img src="./images/news3.jpg">
+                                        </a>
+                                        <div class="news-box">
+                                            <p class="news-date">October 23, 2018</p>
+                                            <a href="#" class="news-title">Oman Conference For Economic And Free Zones Discusses Promoting Competitiveness</a>
+                                            <a href="#" class="link">Read More</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>`
+    }]
+}
+
 
 function addBlock(editor, blocks) {
     $.each(blocks, function (index, item) {
