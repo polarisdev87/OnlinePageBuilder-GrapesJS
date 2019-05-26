@@ -142,6 +142,8 @@ function init() {
                 document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabWidth();
             if(typeof(document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabContent) == "function")
                 document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabContent();
+            if(typeof(document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabId) == "function")
+            document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabId();
         } else {
             // do something else with no changes 
         }
@@ -151,6 +153,17 @@ function init() {
     addBlock(editor, getVisitorGuide());
     addBlock(editor, getVisitorLink());
     addBlock(editor, getVisitorNews());
+    addBlock(editor, getCustomTab());
+    addBlock(editor, getButton());
+}
+
+function getButton() {
+    return [{
+        id: 'button',
+        label: 'button',
+        category: 'Tabs',
+        content: `<button>Button</button>`
+    }]
 }
 
 function getCustomTab() {
@@ -162,17 +175,15 @@ function getCustomTab() {
             title: '',
         },
         category: 'Tabs',
-        content: {
-            components: `
+        content: `
                 <li>
-                    <div class="square-tab-box active" href="javascript:void(0)" data-id="motel">
+                    <div class="square-tab-box" data-id="cruises">
                         <div class="icon motel"></div>
                         <span class="d-none d-sm-block">Tab</span>
                     </div>
-                </li>`,
-            script: `
-                `
-        }
+                </li>
+                `,
+            
     }]
 }
 

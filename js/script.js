@@ -222,7 +222,8 @@ $(document).ready(function(){
   });
 
   $('.square-tab .square-tab-content').eq( 0 ).show();
-  $('.square-tab-box').on('click', function(){
+  $('.square-tab .square-tab-box').on('click', function(){
+    console.log('class');
     var step_id = $(this).data('id');
 
     $('.square-tab-box').removeClass('active');
@@ -537,15 +538,120 @@ $(function(){
 
 function changeTabWidth() {
   $('.square-tab-list').each(function() {
-      $(this).find('li').each(function() {
+      $(this).children().each(function() {
           if($(this).find('div').length == 0) $(this).remove();
       });
 
-      var count = $(this).find('li').length;
-      $(this).find('li').each(function() {
+      var count = $(this).children().length;
+      $(this).children().each(function() {
           $(this).css('width', 'calc(' + (100/count) + '% - 10px)');
       });
   });
 }
+
+function changeTabId() {
+  $('.square-tab-list').each(function () {
+      var amount = $(this).find('.square-tab-box').length;
+      $(this).find('.square-tab-box').each(function () {
+          if ($(this).data('id') == 'tab') {
+              console.log(amount);
+              // $(this).attr('data-id', 'tab' + amount);
+              $(this).attr('data-id', 'cruises');
+              // $(this).parent().parent().css({'display': 'inline'});
+              $('.square-tab-content-list').slick('unslick');
+            //   $('.square-tab').append(`
+            //   <div id="tab${amount}" class="square-tab-content">
+            //     <h5 class="d-block d-sm-none mt-3 mb-0 text-center">Things to do</h5>
+            //     <ul class="square-tab-content-list">
+            //         <li>
+            //             <div class="square-tab-content-img">
+            //                 <img src="./images/visit2.jpg">
+            //             </div>
+            //             <div class="square-tab-content-detail border-box border-light-gray border-1">
+            //                 <div class="my-location d-flex align-items-center mb-3">
+            //                     <img src="./images/my-location.svg" class="mr-2" width="20">
+            //                     0.7Km
+            //                 </div>
+            //                 <h5 class="font-medium">City Hotel Duqm</h5>
+            //                 <p class="text-gray">City Hotel Duqm is located between Salalah and Muscat.</p>
+            //                 <div class="link">Find Out More</div>
+            //             </div>
+            //         </li>
+            //         <li>
+            //             <div class="square-tab-content-img">
+            //                 <img src="./images/visit3.jpg">
+            //             </div>
+            //             <div class="square-tab-content-detail border-box border-light-gray border-1">
+            //                 <div class="my-location d-flex align-items-center mb-3">
+            //                     <img src="./images/my-location.svg" class="mr-2" width="20">
+            //                     3Km
+            //                 </div>
+            //                 <h5 class="font-medium">Park Inn by Radisson</h5>
+            //                 <p class="text-gray">We welcome our guests in a safe and secure hotel environment</p>
+            //                 <div class="link">Find Out More</div>
+            //             </div>
+            //         </li>
+            //         <li>
+            //             <div class="square-tab-content-img">
+            //                 <img src="./images/visit1.jpg">
+            //             </div>
+            //             <div class="square-tab-content-detail border-box border-light-gray border-1">
+            //                 <div class="my-location d-flex align-items-center mb-3">
+            //                     <img src="./images/my-location.svg" class="mr-2" width="20">
+            //                     1.2Km
+            //                 </div>
+            //                 <h5 class="font-medium">Crowne plaza Duqm</h5>
+            //                 <p class="text-gray">Get the celebrity treatment with world-class service at Crowne Plaza Duqm</p>
+            //                 <div class="link">Find Out More</div>
+            //             </div>
+            //         </li>
+            //     </ul>
+            // </div>
+            // `);
+  $('.square-tab-content-list').slick({
+    dots: false,
+    infinite: false,
+    arrows: false,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true
+            }
+        }]
+});
+              return false;
+          }
+      });
+  });
+  
+$('.square-tab .square-tab-box').on('click', function(){
+  console.log('class');
+  var step_id = $(this).data('id');
+  console.log(step_id);
+  $('.square-tab-box').removeClass('active');
+  $('.square-tab .square-tab-content').removeClass('active');
+
+  $('.square-tab .square-tab-content').hide();
+
+  $(this).addClass('active');
+  $('#'+step_id).addClass('active');
+
+  $('#'+step_id).fadeIn(500);
+
+  $('.square-tab-content-list').slick('destroy');
+  $('.square-tab-content-list').slick('init');
+
+  squareTabHeight();
+
+});
+}
+
+
 
 /***** Animate Wow End *****/
