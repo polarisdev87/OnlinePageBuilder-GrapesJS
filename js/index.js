@@ -104,14 +104,11 @@ function init() {
         },
     });
 
-    editor.on('change:changesCount', (model) => {
-        console.log('changed');
-    });
-
     editor.on('load', function () {
         editor.setComponents('<div data-gjs-type="pcBox" data-title="ABC" frameborder="0" data-title=""><div class="c1678"><h4></h4></div></div>');
         editor.setStyle("#header h1 a{display: block; width: 300px; height: 80px;}");
         editor.UndoManager.clear();
+
     });
     var pnm = editor.Panels;
     pnm.addButton("options", [{
@@ -137,11 +134,46 @@ function init() {
     }]);
 
     editor.render();
+
+    editor.on('change:changesCount', (editorModel, changes) => {
+        if (changes) {
+            // do something with changes 
+            if(typeof(document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabWidth) == "function")
+                document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabWidth();
+            if(typeof(document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabContent) == "function")
+                document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabContent();
+        } else {
+            // do something else with no changes 
+        }
+    });
     addBlock(editor, getCommunityTemplate1());
     addBlock(editor, getVisitHeaderTemplate());
     addBlock(editor, getVisitorGuide());
     addBlock(editor, getVisitorLink());
     addBlock(editor, getVisitorNews());
+}
+
+function getCustomTab() {
+    return [{
+        id: 'tab',
+        label: '',
+        attributes: {
+            class: 'custom-icon flowz-visitor-tab-style-2',
+            title: '',
+        },
+        category: 'Tabs',
+        content: {
+            components: `
+                <li>
+                    <div class="square-tab-box active" href="javascript:void(0)" data-id="motel">
+                        <div class="icon motel"></div>
+                        <span class="d-none d-sm-block">Tab</span>
+                    </div>
+                </li>`,
+            script: `
+                `
+        }
+    }]
 }
 
 function getCommunityTemplate1() {
@@ -219,37 +251,37 @@ function getVisitHeaderTemplate() {
                             <div class="square-tab wow fadeIn">
                                 <ul class="square-tab-list">
                                     <li>
-                                        <div class="square-tab-box active" href="javascript:void(0)" data-id="motel">
+                                        <div class="square-tab-box active" data-id="motel">
                                             <div class="icon motel"></div>
                                             <span class="d-none d-sm-block">Hotels</span>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="square-tab-box" href="javascript:void(0)" data-id="things">
+                                        <div class="square-tab-box" data-id="things">
                                             <div class="icon things"></div>
                                             <span class="d-none d-sm-block">Things to do</span>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="square-tab-box" href="javascript:void(0)" data-id="restaurant">
+                                        <div class="square-tab-box" data-id="restaurant">
                                             <div class="icon restaurant"></div>
                                             <span class="d-none d-sm-block">Restaurant</span>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="square-tab-box" href="javascript:void(0)" data-id="flights">
+                                        <div class="square-tab-box" data-id="flights">
                                             <div class="icon flights"></div>
                                             <span class="d-none d-sm-block">Flights</span>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="square-tab-box" href="javascript:void(0)" data-id="cruises">
+                                        <div class="square-tab-box" data-id="cruises">
                                             <div class="icon cruises"></div>
                                             <span class="d-none d-sm-block">Cruises</span>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="square-tab-box" href="javascript:void(0)" data-id="roadTrip">
+                                        <div class="square-tab-box" data-id="roadTrip">
                                             <div class="icon road-trip"></div>
                                             <span class="d-none d-sm-block">Road Trips</span>
                                         </div>
@@ -542,72 +574,14 @@ function getVisitHeaderTemplate() {
                     </div>
                 </div>`,
             script: `
-                    $('.square-tab-content-list').slick({
-                        dots: false,
-                        infinite: false,
-                        arrows: false,
-                        speed: 300,
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        responsive: [
-                        {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            dots: true
-                        }
-                        }]
-                    });
-                    $('.square-tab .square-tab-content').eq( 0 ).show();
-                    $(document).on('click', '.square-tab-list .square-tab-box', function(){
-                        var step_id = $(this).data('id');
-                    
-                        $('.square-tab-list .square-tab-box').removeClass('active');
-                        $('.square-tab .square-tab-content').removeClass('active');
-                    
-                        $('.square-tab .square-tab-content').hide();
-                    
-                        $(this).addClass('active');
-                        $('#'+step_id).addClass('active');
-                    
-                        $('#'+step_id).fadeIn(500);
-                    
-                        $('.square-tab-content-list').slick('destroy');
-                        $('.square-tab-content-list').slick('init');
-                    
-                        squareTabHeight();
-                    
-                    });
-                    $(window).on('resize', function(){
-                        aboutMenu();
-                        $('.square-tab-content-list').slick('destroy');
-                        $('.square-tab-content-list').slick('init'); 
-                    
-                    if($(window).outerWidth() < 768){
-                        $('.site-main-menu-link').addClass('accordion-site-menu');
-                    } else {
-                        $('.site-main-menu-link').removeClass('accordion-site-menu');
+                var script = document.createElement('script');
+                script.src="js/script.js";
+                document.body.appendChild(script);
+                document.addEventListener('keydown', function(event) {
+                    if(event.keyCode == 46) {
+                        changeTabWidth();
                     }
-                    });
-                    function squareTabHeight(){
-                        $('.square-tab-content-detail h5').matchHeight({
-                        property: 'height'
-                        });
-                        $('.square-tab-content-detail p').matchHeight({
-                        property: 'height'
-                        });
-                    };
-                    
-                    function aboutMenu(){
-                        $(window).on('resize', function(){
-                        if($(window).outerWidth() > 575){
-                            $('.about-menu').addClass('show');
-                        } else {
-                            $('.about-menu').removeClass('show');
-                        }
-                        });
-                    };
+                });
                 `
         }
     }];
@@ -880,44 +854,44 @@ function getVisitorNews() {
                 speed: 300,
                 slidesToShow: 3,
                 responsive: [
-                {
-                  breakpoint: 768,
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    dots: true
-                  }
-                }]
-              });
-              $('.latest-news').slick({
-                dots: false,
-                infinite: false,
-                arrows: false,
-                speed: 300,
-                slidesToShow: 3,
-                responsive: [
-                {
-                  breakpoint: 768,
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    dots: true
-                  }
-                }]
-              });
-              $(window).on('resize', function(){
-                aboutMenu();
-                $('.news-block').slick('destroy');
-                $('.news-block').slick('init');
-                });
-                function aboutMenu(){
-                    $(window).on('resize', function(){
-                    if($(window).outerWidth() > 575){
-                        $('.about-menu').addClass('show');
-                    } else {
-                        $('.about-menu').removeClass('show');
+                    {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots: true
                     }
+                    }]
+                });
+                $('.latest-news').slick({
+                    dots: false,
+                    infinite: false,
+                    arrows: false,
+                    speed: 300,
+                    slidesToShow: 3,
+                    responsive: [
+                    {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots: true
+                    }
+                    }]
+                });
+                $(window).on('resize', function(){
+                    aboutMenu();
+                    $('.news-block').slick('destroy');
+                    $('.news-block').slick('init');
                     });
+                    function aboutMenu(){
+                        $(window).on('resize', function(){
+                        if($(window).outerWidth() > 575){
+                            $('.about-menu').addClass('show');
+                        } else {
+                            $('.about-menu').removeClass('show');
+                        }
+                        });
                 };
             `
         }
@@ -929,6 +903,36 @@ function addBlock(editor, blocks) {
     $.each(blocks, function (index, item) {
         editor.BlockManager.add(item.id, item);
     });
+}
+
+function getIframeWindow(iframe_object) {
+    var doc;
+
+    if (iframe_object.contentWindow) {
+        return iframe_object.contentWindow;
+    }
+
+    if (iframe_object.window) {
+        return iframe_object.window;
+    }
+
+    if (!doc && iframe_object.contentDocument) {
+        doc = iframe_object.contentDocument;
+    }
+
+    if (!doc && iframe_object.document) {
+        doc = iframe_object.document;
+    }
+
+    if (doc && doc.defaultView) {
+        return doc.defaultView;
+    }
+
+    if (doc && doc.parentWindow) {
+        return doc.parentWindow;
+    }
+
+    return undefined;
 }
 
 init();

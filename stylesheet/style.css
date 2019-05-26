@@ -7472,3 +7472,7 @@ footer .copy-right-block {
 		margin-bottom: 10px;
 	}
 }
+
+#wrapper {
+	padding-bottom: 100px !important;
+}

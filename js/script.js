@@ -222,10 +222,10 @@ $(document).ready(function(){
   });
 
   $('.square-tab .square-tab-content').eq( 0 ).show();
-  $(document).on('click', '.square-tab-list .square-tab-box', function(){
+  $('.square-tab-box').on('click', function(){
     var step_id = $(this).data('id');
 
-    $('.square-tab-list .square-tab-box').removeClass('active');
+    $('.square-tab-box').removeClass('active');
     $('.square-tab .square-tab-content').removeClass('active');
   
     $('.square-tab .square-tab-content').hide();
@@ -532,5 +532,20 @@ $(function(){
   });
   wow.init();
 });
+
+
+
+function changeTabWidth() {
+  $('.square-tab-list').each(function() {
+      $(this).find('li').each(function() {
+          if($(this).find('div').length == 0) $(this).remove();
+      });
+
+      var count = $(this).find('li').length;
+      $(this).find('li').each(function() {
+          $(this).css('width', 'calc(' + (100/count) + '% - 10px)');
+      });
+  });
+}
 
 /***** Animate Wow End *****/
