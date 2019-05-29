@@ -785,7 +785,7 @@ function getVisitorGuide() {
                             },
                             {
                             breakpoint: 992,
-                                settings: {#
+                                settings: {
                                     slidesToShow: 2,
                                     slidesToScroll: 2,
                                     dots: true

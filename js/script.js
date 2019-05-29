@@ -1,69 +1,69 @@
 $(document).ready(function(){
 
-  $('.testimonial-block').slick({
-    dots: true,
-    infinite: false,
-    arrows: false,
-    speed: 300,
-    slidesToShow: 1,
-    adaptiveHeight: true
-  });
-  $('.news-block').slick({
-    dots: false,
-    infinite: false,
-    arrows: false,
-    speed: 300,
-    slidesToShow: 3,
-    responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: true
-      }
-    }]
-  });
-  $('.latest-news').slick({
-    dots: false,
-    infinite: false,
-    arrows: false,
-    speed: 300,
-    slidesToShow: 3,
-    responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: true
-      }
-    }]
-  });
-  $('.business-step').slick({
-    dots: false,
-    infinite: false,
-    arrows: false,
-    speed: 300,
-    slidesToShow: 5,
-    responsive: [
-    {
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 576,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: true
-      }
-    }]
-  });
+  // $('.testimonial-block').slick({
+  //   dots: true,
+  //   infinite: false,
+  //   arrows: false,
+  //   speed: 300,
+  //   slidesToShow: 1,
+  //   adaptiveHeight: true
+  // });
+  // $('.news-block').slick({
+  //   dots: false,
+  //   infinite: false,
+  //   arrows: false,
+  //   speed: 300,
+  //   slidesToShow: 3,
+  //   responsive: [
+  //   {
+  //     breakpoint: 768,
+  //     settings: {
+  //       slidesToShow: 1,
+  //       slidesToScroll: 1,
+  //       dots: true
+  //     }
+  //   }]
+  // });
+  // $('.latest-news').slick({
+  //   dots: false,
+  //   infinite: false,
+  //   arrows: false,
+  //   speed: 300,
+  //   slidesToShow: 3,
+  //   responsive: [
+  //   {
+  //     breakpoint: 768,
+  //     settings: {
+  //       slidesToShow: 1,
+  //       slidesToScroll: 1,
+  //       dots: true
+  //     }
+  //   }]
+  // });
+  // $('.business-step').slick({
+  //   dots: false,
+  //   infinite: false,
+  //   arrows: false,
+  //   speed: 300,
+  //   slidesToShow: 5,
+  //   responsive: [
+  //   {
+  //     breakpoint: 992,
+  //     settings: {
+  //       slidesToShow: 2,
+  //       slidesToScroll: 2,
+  //       dots: true
+  //     }
+  //   },
+  //   {
+  //     breakpoint: 576,
+  //     settings: {
+  //       slidesToShow: 1,
+  //       slidesToScroll: 1,
+  //       dots: true
+  //     }
+  //   }]
+  // });
   $('.square-tab-content-list').slick({
     dots: false,
     infinite: false,
@@ -81,89 +81,89 @@ $(document).ready(function(){
       }
     }]
   });
-  $('.visitor-guide-slider').slick({
-    dots: false,
-    infinite: false,
-    arrows: false,
-    speed: 300,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 576,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: true
-      }
-    }]
-  });
-  $('.career-slider').slick({
-    dots: false,
-    infinite: false,
-    arrows: false,
-    speed: 300,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    responsive: [
-    {
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: true
-      }
-    }]
-  });
-  $('.environment-slider').slick({
-    dots: false,
-    infinite: false,
-    arrows: false,
-    speed: 300,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 576,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: true
-      }
-    }]
-  });
+  // $('.visitor-guide-slider').slick({
+  //   dots: false,
+  //   infinite: false,
+  //   arrows: false,
+  //   speed: 300,
+  //   slidesToShow: 4,
+  //   slidesToScroll: 1,
+  //   responsive: [
+  //   {
+  //     breakpoint: 1200,
+  //     settings: {
+  //       slidesToShow: 3,
+  //       slidesToScroll: 3,
+  //       dots: true
+  //     }
+  //   },
+  //   {
+  //     breakpoint: 992,
+  //     settings: {
+  //       slidesToShow: 2,
+  //       slidesToScroll: 2,
+  //       dots: true
+  //     }
+  //   },
+  //   {
+  //     breakpoint: 576,
+  //     settings: {
+  //       slidesToShow: 1,
+  //       slidesToScroll: 1,
+  //       dots: true
+  //     }
+  //   }]
+  // });
+  // $('.career-slider').slick({
+  //   dots: false,
+  //   infinite: false,
+  //   arrows: false,
+  //   speed: 300,
+  //   slidesToShow: 3,
+  //   slidesToScroll: 3,
+  //   responsive: [
+  //   {
+  //     breakpoint: 992,
+  //     settings: {
+  //       slidesToShow: 1,
+  //       slidesToScroll: 1,
+  //       dots: true
+  //     }
+  //   }]
+  // });
+  // $('.environment-slider').slick({
+  //   dots: false,
+  //   infinite: false,
+  //   arrows: false,
+  //   speed: 300,
+  //   slidesToShow: 4,
+  //   slidesToScroll: 1,
+  //   responsive: [
+  //   {
+  //     breakpoint: 1200,
+  //     settings: {
+  //       slidesToShow: 3,
+  //       slidesToScroll: 3,
+  //       dots: true
+  //     }
+  //   },
+  //   {
+  //     breakpoint: 992,
+  //     settings: {
+  //       slidesToShow: 2,
+  //       slidesToScroll: 2,
+  //       dots: true
+  //     }
+  //   },
+  //   {
+  //     breakpoint: 576,
+  //     settings: {
+  //       slidesToShow: 1,
+  //       slidesToScroll: 1,
+  //       dots: true
+  //     }
+  //   }]
+  // });
 
   $('.loader-wrapper').fadeOut();
 
