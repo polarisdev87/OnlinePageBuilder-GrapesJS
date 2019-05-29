@@ -105,7 +105,6 @@ function init() {
     });
 
     editor.on('load', function () {
-        editor.setComponents('<div data-gjs-type="pcBox" data-title="ABC" frameborder="0" data-title=""><div class="c1678"><h4></h4></div></div>');
         editor.setStyle("#header h1 a{display: block; width: 300px; height: 80px;}");
         editor.UndoManager.clear();
 
@@ -135,56 +134,159 @@ function init() {
 
     editor.render();
 
+    var comps = editor.DomComponents;
+    var wrapper = comps.getWrapper();
+    
     editor.on('change:changesCount', (editorModel, changes) => {
         if (changes) {
             // do something with changes 
-            if(typeof(document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabWidth) == "function")
+            if (typeof (document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabWidth) == "function")
                 document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabWidth();
-            if(typeof(document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabContent) == "function")
-                document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabContent();
-            if(typeof(document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabId) == "function")
-            document.getElementsByClassName('gjs-frame')[0].contentWindow.changeTabId();
         } else {
             // do something else with no changes 
         }
     });
+
+    editor.on('component:styleUpdate', (model) => {
+        // console.log(model);
+    })
+
+    editor.on('component:selected', (model) => {
+        // if(model.view.$el.attr('data-id') && model.view.$el.attr('data-id').indexOf("tab") > -1){
+        //     if(typeof(document.getElementsByClassName('gjs-frame')[0].contentWindow.reInitSlick) == "function")
+        //         document.getElementsByClassName('gjs-frame')[0].contentWindow.reInitSlick(model.view.$el);
+        // }
+    })
+
+    editor.on('block:drag:stop', (compModel, blockModel) => {
+        if(blockModel.id == "tab") {
+            wrapper.view.$el.find('.square-tab-list').each( function() {
+                var amount = $(this).find('.square-tab-box').length;
+                $(this).find('.square-tab-box').each(function() {
+                    var id = $(this).data('id');
+                    if(id == "tab") {
+                        $(this).attr('data-id', "tab" + amount);
+                        $(this).attr('data-amount', amount);
+                    }
+                })
+                if(!document.getElementById("tab" + amount)) {
+                    if(typeof(document.getElementsByClassName('gjs-frame')[0].contentWindow.destroySlick) == "function") {
+                        console.log('destroy')
+                        document.getElementsByClassName('gjs-frame')[0].contentWindow.destroySlick();
+                    }
+                    $(this).parent('.square-tab').append(`
+                        <div data-gjs-type="default" data-highlighttable="1" id=tab${amount} class="square-tab-content">
+                            <h5 data-gjs-type="text" data-highlighttable="1" class="d-block d-sm-none mt-3 mb-0 text-center">Things to do</h5>
+                            <ul data-gjs-type="default" data-highlighttable="1" class="square-tab-content-list">
+                                <li data-gjs-type="default" data-highlighttable="1">
+                                    <div data-gjs-type="default" data-highlighttable="1" class="square-tab-content-img">
+                                        <img data-gjs-type="image" data-highlighttable="1" src="./images/visit2.jpg">
+                                    </div>
+                                    <div data-gjs-type="default" data-highlighttable="1" class="square-tab-content-detail border-box border-light-gray border-1">
+                                        <div data-gjs-type="text" data-highlighttable="1" class="my-location d-flex align-items-center mb-3">
+                                            <img data-gjs-type="image" data-highlighttable="1" src="./images/my-location.svg" class="mr-2" width="20">
+                                            0.7Km
+                                        </div>
+                                        <h5 data-gjs-type="text" data-highlighttable="1" class="font-medium">City Hotel Duqm</h5>
+                                        <p data-gjs-type="text" data-highlighttable="1" class="text-gray">City Hotel Duqm is located between Salalah and Muscat.</p>
+                                        <div data-gjs-type="text" data-highlighttable="1" class="link">Find Out More</div>
+                                    </div>
+                                </li>
+                                <li data-gjs-type="default" data-highlighttable="1">
+                                    <div data-gjs-type="default" data-highlighttable="1" class="square-tab-content-img">
+                                        <img data-gjs-type="image" data-highlighttable="1" src="./images/visit3.jpg">
+                                    </div>
+                                    <div data-gjs-type="default" data-highlighttable="1" class="square-tab-content-detail border-box border-light-gray border-1">
+                                        <div data-gjs-type="text" data-highlighttable="1" class="my-location d-flex align-items-center mb-3">
+                                            <img data-gjs-type="image" data-highlighttable="1" src="./images/my-location.svg" class="mr-2" width="20">
+                                            3Km
+                                        </div>
+                                        <h5 data-gjs-type="text" data-highlighttable="1" class="font-medium">Park Inn by Radisson</h5>
+                                        <p data-gjs-type="text" data-highlighttable="1" class="text-gray">We welcome our guests in a safe and secure hotel environment</p>
+                                        <div data-gjs-type="text" data-highlighttable="1" class="link">Find Out More</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div data-gjs-type="default" data-highlighttable="1" class="square-tab-content-img">
+                                        <img data-gjs-type="image" data-highlighttable="1" src="./images/visit1.jpg">
+                                    </div>
+                                    <div data-gjs-type="default" data-highlighttable="1" class="square-tab-content-detail border-box border-light-gray border-1">
+                                        <div data-gjs-type="text" data-highlighttable="1" class="my-location d-flex align-items-center mb-3">
+                                            <img data-gjs-type="image" data-highlighttable="1" src="./images/my-location.svg" class="mr-2" width="20">
+                                            1.2Km
+                                        </div>
+                                        <h5 data-gjs-type="text" data-highlighttable="1" class="font-medium">Crowne plaza Duqm</h5>
+                                        <p data-gjs-type="text" data-highlighttable="1" class="text-gray">Get the celebrity treatment with world-class service at Crowne Plaza Duqm</p>
+                                        <div data-gjs-type="text" data-highlighttable="1" class="link">Find Out More</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        `);
+                    var id = $(this).parents('.container').parent().attr('id');
+                    console.log(id);
+                    console.log(editor.getComponents().models);
+                    var html = $(this).parents('.container').parent().parent().html();
+                    var reInit = document.getElementsByClassName('gjs-frame')[0].contentWindow.reInit;
+                    editor.getComponents().models.forEach((model) => {
+                        if(model.ccid == id) {
+                            // console.log(model.attributes.components);
+                            // console.log(html);
+                            model.replaceWith(html);
+                            if(typeof(document.getElementsByClassName('gjs-frame')[0].contentWindow.makeSlick) == "function") {
+                                console.log('init');
+                                document.getElementsByClassName('gjs-frame')[0].contentWindow.makeSlick(amount);
+                            }
+                            reInit();
+                        }
+                    })
+                    // editor.getComponents().models[1].components($(this).parent('.square-tab').html());
+                    
+                }
+            })
+
+        }
+    });
+
+    // Get the model and the view from the default Component type
+    var defaultType = comps.getType('default');
+    var defaultModel = defaultType.model;
+    var defaultView = defaultType.view;
+
+    var inputTypes = [
+        { value: 'text', name: 'Text' },
+        { value: 'email', name: 'Email' },
+        { value: 'password', name: 'Password' },
+        { value: 'number', name: 'Number' },
+    ];
+
     addBlock(editor, getCommunityTemplate1());
     addBlock(editor, getVisitHeaderTemplate());
     addBlock(editor, getVisitorGuide());
     addBlock(editor, getVisitorLink());
     addBlock(editor, getVisitorNews());
     addBlock(editor, getCustomTab());
-    addBlock(editor, getButton());
-}
 
-function getButton() {
-    return [{
-        id: 'button',
-        label: 'button',
-        category: 'Tabs',
-        content: `<button>Button</button>`
-    }]
-}
+    function getCustomTab() {
+        return [{
+            id: 'tab',
+            label: '',
+            attributes: {
+                class: 'custom-icon flowz-visitor-tab-style-2',
+                title: '',
+            },
+            category: 'Tabs',
+            content: `
+                    <li>
+                        <div class="square-tab-box" data-id="tab">
+                            <div class="icon motel"></div>
+                            <span class="d-none d-sm-block">Tab</span>
+                        </div>
+                    </li>
+                    `,
 
-function getCustomTab() {
-    return [{
-        id: 'tab',
-        label: '',
-        attributes: {
-            class: 'custom-icon flowz-visitor-tab-style-2',
-            title: '',
-        },
-        category: 'Tabs',
-        content: `
-                <li>
-                    <div class="square-tab-box" data-id="cruises">
-                        <div class="icon motel"></div>
-                        <span class="d-none d-sm-block">Tab</span>
-                    </div>
-                </li>
-                `,
-            
-    }]
+        }]
+    }
 }
 
 function getCommunityTemplate1() {
@@ -683,7 +785,7 @@ function getVisitorGuide() {
                             },
                             {
                             breakpoint: 992,
-                                settings: {
+                                settings: {#
                                     slidesToShow: 2,
                                     slidesToScroll: 2,
                                     dots: true
@@ -914,36 +1016,6 @@ function addBlock(editor, blocks) {
     $.each(blocks, function (index, item) {
         editor.BlockManager.add(item.id, item);
     });
-}
-
-function getIframeWindow(iframe_object) {
-    var doc;
-
-    if (iframe_object.contentWindow) {
-        return iframe_object.contentWindow;
-    }
-
-    if (iframe_object.window) {
-        return iframe_object.window;
-    }
-
-    if (!doc && iframe_object.contentDocument) {
-        doc = iframe_object.contentDocument;
-    }
-
-    if (!doc && iframe_object.document) {
-        doc = iframe_object.document;
-    }
-
-    if (doc && doc.defaultView) {
-        return doc.defaultView;
-    }
-
-    if (doc && doc.parentWindow) {
-        return doc.parentWindow;
-    }
-
-    return undefined;
 }
 
 init();
